@@ -1950,6 +1950,22 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1707724199}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnAimTwo
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 85038862-adbc-43cc-b59f-bc8ecda95e3d
+    m_ActionName: Player/AimTwo[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1707724199}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnAim
         m_Mode: 0
         m_Arguments:
@@ -1960,8 +1976,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 809361f1-c8a9-4e0c-9f31-bec6553b4fcd
-    m_ActionName: Player/Aim[/XInputControllerWindows/rightStick]
+    m_ActionId: feec90c1-73bc-45a7-952b-85ac6fdb593d
+    m_ActionName: Player/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: New Keyboard
   m_DefaultActionMap: Player

@@ -16,7 +16,11 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 movementInput = Vector2.zero;
     private Vector2 aimInput = Vector2.zero;
+    private Vector2 aimInput2 = Vector2.zero;
     private float rotateAimValue;
+    private float rotateAimValue2;
+
+    private Vector2 mousePosition;
 
     private void Start()
     {
@@ -31,6 +35,10 @@ public class PlayerController : MonoBehaviour
     public void OnAim(InputAction.CallbackContext context)
     {
         aimInput = context.ReadValue<Vector2>();
+    }
+    public void OnAimTwo(InputAction.CallbackContext context)
+    {
+        //mousePosition = Mouse.current.position.ReadValue();
     }
 
     void Update()
@@ -64,6 +72,20 @@ public class PlayerController : MonoBehaviour
         {
             aimCursor.transform.rotation = Quaternion.Euler(0, 0, rotateAimValue + 90);
         }
+
+        //rotateAimValue2 = Mathf.Atan(mousePosition.y / mousePosition.x) * Mathf.Rad2Deg;
+
+        //if (mousePosition.x > 0)
+        //{
+        //    aimCursor.transform.rotation = Quaternion.Euler(0, 0, rotateAimValue2 - 90);
+        //}
+        //else if (mousePosition.x < 0)
+        //{
+        //    aimCursor.transform.rotation = Quaternion.Euler(0, 0, rotateAimValue2 + 90);
+        //}
+
+
+
 
 
 

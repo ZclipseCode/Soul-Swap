@@ -15,9 +15,18 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "AimTwo",
+                    "type": "PassThrough",
+                    "id": "85038862-adbc-43cc-b59f-bc8ecda95e3d",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Aim",
                     "type": "PassThrough",
-                    "id": "809361f1-c8a9-4e0c-9f31-bec6553b4fcd",
+                    "id": "feec90c1-73bc-45a7-952b-85ac6fdb593d",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -93,7 +102,18 @@
                 },
                 {
                     "name": "",
-                    "id": "c87e0a02-578e-45e6-8f8c-2faf1df58681",
+                    "id": "07d4be14-69f4-49e8-ab6e-8aa5e62b7372",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "New Keyboard",
+                    "action": "AimTwo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6205fbce-4544-4c49-9c16-555540642d1f",
                     "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "",
@@ -128,6 +148,11 @@
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
                     "isOptional": false,
                     "isOR": false
                 }
