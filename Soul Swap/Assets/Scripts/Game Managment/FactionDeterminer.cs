@@ -25,15 +25,5 @@ public class FactionDeterminer : MonoBehaviour
         }
     }
 
-    public Faction GetFaction(int value)
-    {
-        if (value < 0 || value > 1)
-        {
-            Debug.Log("Faction value out of range!");
-
-            return factions[0];
-        }
-
-        return factions[value];
-    }
+    public Faction[] GetFactions() => factions;
 }
