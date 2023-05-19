@@ -89,6 +89,8 @@ public class TradeTree : MonoBehaviour
         {
             Debug.Log("Unrecognized stat!");
         }
+
+        GenerateChoices();
     }
 }
 
