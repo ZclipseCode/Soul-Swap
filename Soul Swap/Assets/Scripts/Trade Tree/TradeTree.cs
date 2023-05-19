@@ -24,7 +24,7 @@ public class TradeTree : MonoBehaviour
         stats = playerGO.GetComponent<Stats>();
         skillPoints = playerGO.GetComponent<SkillPoints>();
 
-        factionDeterminer = GameObject.FindGameObjectWithTag("GameController").GetComponent<FactionDeterminer>(); // change tag
+        factionDeterminer = GameObject.FindGameObjectWithTag("GameController").GetComponent<FactionDeterminer>(); // change tag?
         factions = factionDeterminer.GetFactions();
 
         //GenerateChoices();
