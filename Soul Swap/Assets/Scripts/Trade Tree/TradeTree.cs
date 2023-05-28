@@ -10,7 +10,7 @@ public class TradeTree : MonoBehaviour
     [SerializeField] int upgradeCost = 1;
 
     GameObject playerGO;
-    PlayerDetails stats;
+    Stats stats;
     SkillPoints skillPoints;
 
     FactionDeterminer factionDeterminer;
@@ -21,7 +21,7 @@ public class TradeTree : MonoBehaviour
     private void Start()
     {
         playerGO = GameObject.FindGameObjectWithTag("Player");
-        stats = playerGO.GetComponent<PlayerDetails>();
+        stats = playerGO.GetComponent<Stats>();
         skillPoints = playerGO.GetComponent<SkillPoints>();
 
         factionDeterminer = GameObject.FindGameObjectWithTag("GameController").GetComponent<FactionDeterminer>(); // change tag?

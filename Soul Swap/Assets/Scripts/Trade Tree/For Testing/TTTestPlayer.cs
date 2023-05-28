@@ -6,12 +6,12 @@ public class TTTestPlayer : MonoBehaviour
 {
     [SerializeField] Faction faction;
     [SerializeField] Class playerClass;
-    PlayerDetails stats;
+    Stats stats;
     SkillPoints skillPoints;
 
     void Start()
     {
-        stats = GetComponent<PlayerDetails>();
+        stats = GetComponent<Stats>();
         skillPoints = GetComponent<SkillPoints>();
     }
 }

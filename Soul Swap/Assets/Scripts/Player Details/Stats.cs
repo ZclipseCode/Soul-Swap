@@ -2,16 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerDetails : MonoBehaviour
+public class Stats : MonoBehaviour
 {
     [SerializeField] float health = 1;
     [SerializeField] float attack = 1;
     [SerializeField] float speed = 1;
-    [SerializeField] Faction faction;
-    [SerializeField] Class playerClass;
-    // primary attack
-    // alternative ability
-    // passive ability
 
     public void HealthIncrease(int value)
     {
