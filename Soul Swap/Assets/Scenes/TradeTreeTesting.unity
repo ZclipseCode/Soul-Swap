@@ -132,9 +132,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 414272937}
-  - component: {fileID: 414272936}
   - component: {fileID: 414272935}
   - component: {fileID: 414272938}
+  - component: {fileID: 414272939}
   m_Layer: 0
   m_Name: TT Test Player
   m_TagString: Player
@@ -155,21 +155,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillPoints: 100
---- !u!114 &414272936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 414272934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f51e7c22de134545af3712bb297312f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
-  attack: 1
-  speed: 1
 --- !u!4 &414272937
 Transform:
   m_ObjectHideFlags: 0
@@ -199,6 +184,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faction: 0
   playerClass: 0
+--- !u!114 &414272939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414272934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d25b5ade612d194b8d684e748285b51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  attack: 1
+  speed: 1
 --- !u!1 &797468169
 GameObject:
   m_ObjectHideFlags: 0
