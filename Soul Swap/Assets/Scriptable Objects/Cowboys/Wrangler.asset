@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d25b5ade612d194b8d684e748285b51, type: 3}
   m_Name: Wrangler
   m_EditorClassIdentifier: 
-  playerName: 
+  playerName: Wrangler
   faction: 0
-  playerClass: 0
+  playerClass: 2
   initialHealth: 1
   initialAttack: 1
   initialSpeed: 1
