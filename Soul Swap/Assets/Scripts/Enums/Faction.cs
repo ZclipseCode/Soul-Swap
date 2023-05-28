@@ -10,5 +10,5 @@ public enum Faction
     Pirate,
     Ninja,
     Space,
-    TBD
+    Circus
 }
