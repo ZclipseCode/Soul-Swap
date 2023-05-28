@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerDetails : MonoBehaviour
+[CreateAssetMenu(fileName = "New PlayerDetails", menuName = "PlayerDetails")]
+public class PlayerDetails : ScriptableObject
 {
+    [SerializeField] string playerName;
+    [SerializeField] Faction faction;
+    [SerializeField] Class playerClass;
     [SerializeField] float health = 1;
     [SerializeField] float attack = 1;
     [SerializeField] float speed = 1;
-    [SerializeField] Faction faction;
-    [SerializeField] Class playerClass;
     // primary attack
     // alternative ability
     // passive ability

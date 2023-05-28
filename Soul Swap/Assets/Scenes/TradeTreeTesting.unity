@@ -184,6 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faction: 0
   playerClass: 0
+  details: {fileID: 11400000, guid: f16613b26a1d10d44bf4319e106233cd, type: 2}
 --- !u!114 &414272939
 MonoBehaviour:
   m_ObjectHideFlags: 0

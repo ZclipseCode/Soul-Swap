@@ -9,6 +9,8 @@ public class TTTestPlayer : MonoBehaviour
     Stats stats;
     SkillPoints skillPoints;
 
+    [SerializeField] PlayerDetails details;
+
     void Start()
     {
         stats = GetComponent<Stats>();
