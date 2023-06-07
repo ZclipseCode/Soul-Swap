@@ -38,7 +38,10 @@ public class PlayerController : MonoBehaviour
     }
     public void OnAimTwo(InputAction.CallbackContext context)
     {
-        //mousePosition = Mouse.current.position.ReadValue();
+        if (Cursor.visible)
+        {
+            mousePosition = Mouse.current.position.ReadValue();
+        }
     }
 
     void Update()
@@ -67,22 +70,46 @@ public class PlayerController : MonoBehaviour
         if (aimInput.x > 0)
         {
             aimCursor.transform.rotation = Quaternion.Euler(0, 0, rotateAimValue - 90);
+            Cursor.visible = false;
         }
         else if (aimInput.x < 0)
         {
             aimCursor.transform.rotation = Quaternion.Euler(0, 0, rotateAimValue + 90);
+            Cursor.visible = false;
         }
 
-        //rotateAimValue2 = Mathf.Atan(mousePosition.y / mousePosition.x) * Mathf.Rad2Deg;
+        if (Cursor.visible)
+        {
 
-        //if (mousePosition.x > 0)
-        //{
-        //    aimCursor.transform.rotation = Quaternion.Euler(0, 0, rotateAimValue2 - 90);
-        //}
-        //else if (mousePosition.x < 0)
-        //{
-        //    aimCursor.transform.rotation = Quaternion.Euler(0, 0, rotateAimValue2 + 90);
-        //}
+            rotateAimValue2 = Mathf.Atan(mousePosition.y / mousePosition.x) * Mathf.Rad2Deg;
+
+            if (mousePosition.x > 0)
+            {
+                aimCursor.transform.rotation = Quaternion.Euler(0, 0, rotateAimValue2 - 90);
+            }
+            else if (mousePosition.x < 0)
+            {
+                aimCursor.transform.rotation = Quaternion.Euler(0, 0, rotateAimValue2 + 90);
+            }
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            Cursor.visible = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            Cursor.visible = true;
+        }
+        else if(Input.GetKeyDown(KeyCode.S))
+        {
+            Cursor.visible = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            Cursor.visible = true;
+        }
 
 
 
