@@ -40,7 +40,7 @@ public class RangedWeaponShooting : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //Debug.Log(bulletCooldownTimer);
+        Debug.Log(bulletCooldownTimer);
 
         if(bulletCooldownTimer < 1)
         {
