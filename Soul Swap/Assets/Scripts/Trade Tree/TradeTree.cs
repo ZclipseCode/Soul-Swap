@@ -10,7 +10,7 @@ public class TradeTree : MonoBehaviour
     [SerializeField] int upgradeCost = 1;
 
     GameObject playerGO;
-    Stats stats;
+    TTTestPlayer player; // testing
     SkillPoints skillPoints;
 
     FactionDeterminer factionDeterminer;
@@ -21,7 +21,7 @@ public class TradeTree : MonoBehaviour
     private void Start()
     {
         playerGO = GameObject.FindGameObjectWithTag("Player");
-        stats = playerGO.GetComponent<Stats>();
+        player = playerGO.GetComponent<TTTestPlayer>();
         skillPoints = playerGO.GetComponent<SkillPoints>();
 
         factionDeterminer = GameObject.FindGameObjectWithTag("GameController").GetComponent<FactionDeterminer>(); // change tag?
@@ -73,23 +73,26 @@ public class TradeTree : MonoBehaviour
 
     public void IncreaseStat(Branch branch)
     {
-        if (branch.Stat == Stat.Health)
+        if (branch.Faction == player.GetFaction() && branch.PlayerClass == player.GetClass())
         {
-            stats.HealthIncrease(branch.StatIncrease);
+            if (branch.Stat == Stat.Health)
+            {
+                player.HealthIncrease(branch.StatIncrease);
+            }
+            else if (branch.Stat == Stat.Attack)
+            {
+                player.AttackIncrease(branch.StatIncrease);
+            }
+            else if (branch.Stat == Stat.Speed)
+            {
+                player.SpeedIncrease(branch.StatIncrease);
+            }
+            else
+            {
+                Debug.Log("Unrecognized stat!");
+            }
         }
-        else if (branch.Stat == Stat.Attack)
-        {
-            stats.AttackIncrease(branch.StatIncrease);
-        }
-        else if (branch.Stat == Stat.Speed)
-        {
-            stats.SpeedIncrease(branch.StatIncrease);
-        }
-        else
-        {
-            Debug.Log("Unrecognized stat!");
-        }
-
+        
         GenerateChoices();
     }
 }
