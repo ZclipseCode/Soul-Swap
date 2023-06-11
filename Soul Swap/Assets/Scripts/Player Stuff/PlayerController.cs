@@ -22,9 +22,17 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 mousePosition;
 
+    private SpriteRenderer _renderer;
+
+    [SerializeField] Animator animator;
+
     private void Start()
     {
         //controller = gameObject.GetComponent<CharacterController>();
+
+        _renderer = GetComponent<SpriteRenderer>();
+
+        animator = GetComponent<Animator>();
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -38,13 +46,18 @@ public class PlayerController : MonoBehaviour
     }
     public void OnAimTwo(InputAction.CallbackContext context)
     {
-        //mousePosition = Mouse.current.position.ReadValue();
+        if (Cursor.visible)
+        {
+            mousePosition = Mouse.current.position.ReadValue();
+        }
     }
 
     void Update()
     {
         aimCursor.transform.position = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y, playerObject.transform.position.z);
 
+        bool isMoving = animator.GetBool("IsMoving");
+        bool isIdle = animator.GetBool("IsIdle");
 
         //groundedPlayer = controller.isGrounded;
         //if (groundedPlayer && playerVelocity.y < 0)
@@ -59,7 +72,30 @@ public class PlayerController : MonoBehaviour
         if (move != Vector2.zero)
         {
             gameObject.transform.forward = move;
+            animator.SetBool("IsIdle", false);
+            animator.SetBool("IsMoving", true);
         }
+        else
+        {
+            animator.SetBool("IsIdle", true);
+            animator.SetBool("IsMoving", false);
+        }
+
+        if (movementInput.x > 0)
+        {
+            _renderer.flipX = false;
+            isIdle = false;
+            isMoving = true;
+
+        }
+        else if (movementInput.x < 0)
+        {
+            _renderer.flipX = true;
+            isIdle = false;
+            isMoving = true;
+        }
+
+        
 
         Vector2 aim = new Vector2(aimInput.x, aimInput.y);
         rotateAimValue = Mathf.Atan(aimInput.y / aimInput.x) * Mathf.Rad2Deg;
@@ -67,22 +103,46 @@ public class PlayerController : MonoBehaviour
         if (aimInput.x > 0)
         {
             aimCursor.transform.rotation = Quaternion.Euler(0, 0, rotateAimValue - 90);
+            Cursor.visible = false;
         }
         else if (aimInput.x < 0)
         {
             aimCursor.transform.rotation = Quaternion.Euler(0, 0, rotateAimValue + 90);
+            Cursor.visible = false;
         }
 
-        //rotateAimValue2 = Mathf.Atan(mousePosition.y / mousePosition.x) * Mathf.Rad2Deg;
+        if (Cursor.visible)
+        {
 
-        //if (mousePosition.x > 0)
-        //{
-        //    aimCursor.transform.rotation = Quaternion.Euler(0, 0, rotateAimValue2 - 90);
-        //}
-        //else if (mousePosition.x < 0)
-        //{
-        //    aimCursor.transform.rotation = Quaternion.Euler(0, 0, rotateAimValue2 + 90);
-        //}
+            rotateAimValue2 = Mathf.Atan(mousePosition.y / mousePosition.x) * Mathf.Rad2Deg;
+
+            if (mousePosition.x > 0)
+            {
+                aimCursor.transform.rotation = Quaternion.Euler(0, 0, rotateAimValue2 - 90);
+            }
+            else if (mousePosition.x < 0)
+            {
+                aimCursor.transform.rotation = Quaternion.Euler(0, 0, rotateAimValue2 + 90);
+            }
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            Cursor.visible = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.A))
+        {
+            Cursor.visible = true;
+        }
+        else if(Input.GetKeyDown(KeyCode.S))
+        {
+            Cursor.visible = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.D))
+        {
+            Cursor.visible = true;
+        }
 
 
 
